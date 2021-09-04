@@ -1,0 +1,12 @@
+{
+    "name": "laravel/homestead",
+    "versions": [{
+        "version": "11.3.0",   
+        "providers":[
+            {
+            "name": "parallels",
+            "url": "/Users/Jiannei/Downloads/parallels.box"  
+            }
+        ]
+    }]
+}
