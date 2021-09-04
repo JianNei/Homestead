@@ -21,3 +21,5 @@
 # More info: https://github.com/nodesource/distributions/blob/master/README.md#debinstall
 #curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
 #sudo apt-get install -y nodejs
+sudo timedatectl set-timezone Asia/Shanghai
+composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/

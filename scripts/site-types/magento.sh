@@ -29,6 +29,8 @@ block="server {
     location ~* ^/setup($|/) {
         root \$MAGE_ROOT;
         location ~ ^/setup/index.php {
+            fastcgi_split_path_info ^(.+?\.php)(/.*)$;
+
             fastcgi_pass   unix:/var/run/php/php$5-fpm.sock;
 
             fastcgi_param  PHP_FLAG  \"session.auto_start=off \n suhosin.session.cryptua=off\";
@@ -200,6 +202,9 @@ block="server {
 
     ssl_certificate     /etc/ssl/certs/$1.crt;
     ssl_certificate_key /etc/ssl/certs/$1.key;
+
+    error_log /var/log/nginx/$1_error.log;
+    access_log /var/log/nginx/$1_access.log;
 
 }"
 
